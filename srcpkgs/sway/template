@@ -21,9 +21,4 @@ wrksrc=${pkgname}-${_act_version}
 
 post_install() {
 	vlicense LICENSE
-	# must be setuid without logind!
-	which loginctl
-	if [ 0 -ne $? ]; then
-		chmod u+s ${DESTDIR}/usr/bin/sway
-	fi
 }
